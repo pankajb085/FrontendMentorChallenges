@@ -33,6 +33,13 @@ body {
     border-radius: 20px;
     padding: 1.5rem;
     box-shadow: .5rem .5rem;
+
+    &:where(:hover, :focus, :active) {
+        cursor: pointer;
+        .card-title{
+            color: var(--accent-color);
+        }
+    }
 }
 
 .card-img {

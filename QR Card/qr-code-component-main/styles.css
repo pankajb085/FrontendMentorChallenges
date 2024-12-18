@@ -1,0 +1,77 @@
+* {
+    box-sizing: border-box;
+}
+
+h1, body, p {
+    margin: 0;
+}
+
+body {
+    min-height: 100vh;
+    height: 100vh;
+}
+
+:root {
+    --bg-color: #D5E1EF;
+    --card-bg-color: hsl(0, 0%, 100%);
+    --font-weight-bold: 700;
+    --font-weight-normal: 400;
+}
+
+.outfit {
+  font-family: "Outfit", serif;
+  font-style: normal;
+}
+
+.background {
+    background-color: var(--bg-color);
+    height: 100%;
+    display: grid;
+    place-content: center;
+}
+
+.card {
+    background-color: var(--card-bg-color);
+    border: 1.5px solid black;
+    border-radius: 1rem;
+    padding: 1rem;
+    padding-bottom: 40px;
+    width: 320px;
+    height: 499px;
+}
+
+.qr {
+    height: 288px;
+}
+
+.qr-img {
+    max-width: 100%;
+    object-fit: contain;
+    object-position: center;
+    border-radius: .75rem;
+}
+
+.texts {
+    padding-inline: 1rem;
+    text-align: center;
+}
+
+:where(.card, .texts){
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.title {
+    font-weight: var(--font-weight-bold);
+    color: #1F314F;
+    font-size: 22px;
+    line-height: 1.2;
+}
+
+.text {
+    font-weight: var(--font-weight-normal);
+    color: #68778D;
+    font-size: 15px;
+    line-height: 1.4;
+}

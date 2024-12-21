@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Young+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+h1, h2, h3, p, body, ul, ol {
+    margin: 0;
+    padding: 0;;
+}
+
+ul, ol {
+    list-style-position: inside;
+}
+
+li:not(li:last-child){
+    margin-bottom: .5rem;
+}
+
+body {
+  font-family: "Outfit", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+h1, h2 {
+    font-family: "Young Serif", serif;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1;
+}
+
+h2 {
+    font-size: 1.75rem;
+    color: #854632;
+    margin-bottom: 1.5rem;
+}
+
+img {
+    max-width: 100%;
+}
+
+.container {
+    display: grid;
+    place-content: center;
+    background-color: hsl(30, 54%, 90%);
+    height: 100%;
+}
+
+.recipe-card {
+    background-color: hsl(0, 0%, 100%);
+    width: clamp(50vw, 550px, 100vw);
+    border-radius: 1.5rem;
+    margin-block: 10%;
+}
+
+.recipe-pic {
+    border-radius: .5rem;
+}
+
+.recipe-pic-container {
+    padding: 2rem;
+    padding-bottom: 0;
+}
+
+@media screen and (width <= 450px) {
+    .recipe-card {
+        margin: 0;
+        border-radius: 0;
+    }
+
+    .recipe-pic-container {
+        padding: 0;
+    }
+
+    .recipe-pic {
+        border-radius: 0;
+    }
+}
+
+.preparation {
+    background-color: hsl(330, 100%, 98%);
+    padding: 1.5rem;
+    border-radius: .75rem;
+}
+
+.recipe-name {
+    line-height: 1;
+    margin-bottom: 1.5rem;
+    color: #312E2C;
+}
+
+.recipe-name ~ p {
+    color: #5F564D;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.recipe-details-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.preparation {
+    color: #7A284E;
+}
+
+.prep-title {
+    font-size: 1.25rem;
+    line-height: 1;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.prep-desc, .ingred-desc, .instruct-steps, .nutri-desc, .nutri-table {
+    font-size: 1rem;
+    line-height: 1.5;
+    font-weight: 400;
+    &:not(.nutri-desc, .nutri-table){
+        padding-left: .5rem;
+    }
+    li{
+        color: #5F564D;
+    }
+}
+
+.nutri-desc, .nutri-table {
+    color: #5F564D;
+}
+
+.nutri-table {
+    width: 100%;
+    border-collapse: collapse;
+    td {
+        border-bottom: 1px solid #E3DDD7;
+        padding-bottom: .5rem;
+        padding-left: 1rem;
+
+        &:last-child {
+            color: #854632;
+            font-weight: 700;
+        }
+    }
+    tr:last-child td{
+        border-bottom: none;
+    }
+}
+
+.nutri-desc {
+    margin-bottom: 1.5rem;
+}
+
+.prep-desc li::marker {
+    color: #7A284E;
+}
+
+.prep-desc span {
+    font-weight: 700;
+}
+
+.prep-desc li span:last-child {
+    font-weight: 400;
+}
+
+:is(.ingred-desc, .instruct-steps) li::marker {
+    color: #854632;
+    font-weight: 700;
+}
+
+.instruct-steps span {
+    margin-left: .75rem;
+    font-weight: 700;
+}
+
+.ingredients, .instructions {
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #E3DDD7;
+}

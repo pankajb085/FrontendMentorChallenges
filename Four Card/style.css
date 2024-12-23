@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --primary-color: #4D4F62;
+    --font-wt-light: 200;
+    --font-wt-regular: 400;
+    --font-wt-semibold: 600;
+    --border-top: .25rem solid;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+h1, h2, p, body {
+    margin: 0;
+}
+
+body {
+    background-color: #F2F2F2;
+    color: var(--primary-color);
+    font-family: "Poppins", serif;
+    font-style: normal;
+    font-weight: var(--font-wt-regular);
+    font-size: .8125rem;
+    display: grid;
+    place-content: center;
+}
+
+main {
+    min-height: 100vh;
+    display: grid;
+    place-content: center;
+    padding: 5rem 2rem;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.info {
+    margin-bottom: 4rem;
+    text-align: center;
+    width: min(100%, 540px);
+    margin-inline: auto;
+}
+
+.title {
+    font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+    letter-spacing: .25px;
+    margin-bottom: 1rem;
+    font-weight: var(--font-wt-semibold);
+
+    p{
+        font-weight: var(--font-wt-light);
+    }
+}
+
+.description {
+    font-size: 0.9375rem;
+    letter-spacing: .1px;
+}
+
+.tool-name {
+    font-size: 1.25rem;
+    font-weight: var(--font-wt-semibold);
+}
+
+.tools > div {
+    background-color: #FFF;
+    border-radius: .25rem;
+    padding: 2rem;
+    box-shadow: 0 .2rem .5rem 0 hsl(229, 6%, 66%);
+    img {
+        margin-left: auto;
+    }
+}
+
+.tool-info {
+    margin-bottom: 2rem;
+}
+
+.tools {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.supervisor {
+    border-top: var(--border-top) hsl(180, 62%, 55%);
+    grid-row: 2 / span 2;
+    grid-column: 1;
+}
+
+.team-builder {
+    border-top: var(--border-top) hsl(0, 78%, 62%);
+    grid-row: 1 / span 2;
+    grid-column: 2;
+}
+
+.karma {
+    border-top: var(--border-top) hsl(34, 97%, 64%);
+    grid-row: 3 / span 2;
+    grid-column: 2;
+}
+
+.calculator {
+    border-top: var(--border-top) hsl(212, 86%, 64%);
+    grid-row: 2 / span 2;
+    grid-column: 3;
+}
+
+@media screen and (width <= 768px) {
+    .tools {
+        grid-template-columns: 1fr;
+    }
+
+    .supervisor {
+        grid-row: 1;
+        grid-column: 1;
+    }
+
+    .team-builder {
+        grid-row: 2;
+        grid-column: 1;
+    }
+
+    .karma {
+        grid-row: 3;
+        grid-column: 1;
+    }
+
+    .calculator {
+        grid-row: 4;
+        grid-column: 1;
+    }
+
+}

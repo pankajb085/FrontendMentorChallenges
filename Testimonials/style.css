@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --color-white: #FFF;
+    --color-grey: #48556A;
+    --font-wt-medium: 500;
+    --font-wt-semibold: 600;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+h1, p, body {
+    margin: 0;
+}
+
+body {
+    font-family: "Barlow Semi Condensed", serif;
+    font-style: normal;
+    font-weight: var(--font-wt-medium);
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+main {
+    min-height: 100vh;
+    background-color: #ECF2F8;
+    display: grid;
+    place-content: center;
+    gap: 1.5rem;
+    padding: 4.5rem 1.5rem;
+}
+
+.testimony-card {
+    padding: 2rem;
+    border-radius: .5rem;
+    display: inline-grid;
+    gap: 1.5rem;
+}
+
+.testimony-card-1 {
+    background-color: #733FC8;
+    color: var(--color-white);
+    background-image: url("./images/bg-pattern-quotation.svg");
+    background-repeat: no-repeat;
+    background-position: top right 10%;
+}
+
+.testimony-card-2 {
+    background-color: var(--color-grey);
+    color: var(--color-white);
+}
+
+.testimony-card-3 {
+    background-color: var(--color-white);
+    color: var(--color-grey);
+}
+
+.testimony-card-4 {
+    background-color: #19202D;
+    color: var(--color-white);
+}
+
+.testimony-card-5 {
+    background-color: var(--color-white);
+    color: var(--color-grey)
+}
+
+.witness {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.witness-pic {
+    width: 1.75rem;
+    height: 1.75rem;
+}
+
+.witness-name {
+    font-size: 0.8125rem;
+    line-height: 0.8125rem;
+    margin-bottom: .25rem;
+}
+
+.witness-education {
+    opacity: .5;
+    font-size: 0.6875rem;
+    line-height: 0.6875rem;
+}
+
+.witness-pic img {
+    border-radius: 50%;
+}
+
+.testimony-title {
+    font-size: 1.25rem;
+    font-weight: var(--font-wt-semibold);
+}
+
+.testimony-desc {
+    opacity: .7;
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
+}
+
+@media screen and (min-width: 900px) {
+    main {
+        padding: 10.25rem;
+        grid-template-areas: 
+            "card1 card1 card1 card1 card1 card1 card1 card1 card1 card1 card1 card1 card1 card1 card1 card1 card1 card1 card1 card2 card2 card2 card2 card2 card2 card2 card2 card2 card3 card3 card3 card3 card3 card3 card3 card3 card3"
+            "card4 card4 card4 card4 card4 card4 card4 card4 card4 card5 card5 card5 card5 card5 card5 card5 card5 card5 card5 card5 card5 card5 card5 card5 card5 card5 card5 card5 card3 card3 card3 card3 card3 card3 card3 card3 card3"
+        ;
+    }
+
+    article.testimony-card-1 {
+        grid-area: card1;
+        background-position: top right 30%;
+    }
+    
+    .testimony-card-2 {
+        grid-area: card2;
+    }
+
+    .testimony-card-3 {
+        grid-area: card4;
+    }
+
+    .testimony-card-4 {
+        grid-area: card5;
+    }
+
+    .testimony-card-5 {
+        grid-area: card3;
+    }
+
+}

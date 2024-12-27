@@ -1,0 +1,315 @@
+@use "reset" as *;
+@use "text-presets" as *;
+@use "colors" as *;
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital@0;1&display=swap');
+
+body {
+    background-color: $color-white;
+    font-family: "Red Hat Display", serif;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 1.1;
+    text-align: center;
+}
+
+.header {
+    background-image: url("../assets/tablet/image-hero.png");
+    background-repeat: no-repeat;
+    background-position: top 25% center;
+    background-size: contain;
+    &-nav {
+        padding-top: 3rem;
+        &-img {
+            margin-inline: auto;
+        }
+    }
+
+    &-infowrapper {
+        padding: 13rem 0 0 0;
+        display: flex;
+        flex-direction: column;
+        gap: $spacing-300;
+    }
+
+    &-info {
+        padding: $spacing-800 $spacing-400 $spacing-400 $spacing-400;
+    }
+
+    &-title {
+        font-size: $spacing-500;
+        color: $color-slate-900;
+        font-weight: 900;
+    }
+
+    &-desc {
+        font-size: $spacing-200;
+        color: $color-slate-600;
+        font-weight: 500;
+        line-height: 1.5;
+    }
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-200;
+    align-items: center;
+}
+
+.btn {
+    border-radius: 29px;
+    padding: $spacing-200 $spacing-500;
+    outline: none;
+    border: none;
+    color: $color-white;
+    font-size: $spacing-200;
+    font-weight: 900;
+    line-height: 1.5;  
+    width: fit-content;
+    height: fit-content;
+
+    &-primary {
+        background-color: $color-cyan-600;
+        span {
+            color: $color-cyan-300;
+        }
+    }
+
+    &-secondary {
+        background-color: $color-purple-600;
+        span {
+            color: $color-purple-300;
+        }
+    }
+}
+
+.point {
+    color: $color-slate-300;
+    width: $spacing-700;
+    height: 8.5rem;
+
+    &-2 {
+        position: relative;
+        top: 22%;
+    }
+
+    .line {
+        position: relative;
+        right: 50%;
+        border-right: 1px solid;
+        height: $spacing-1000;
+    }
+
+    .circle {
+        width: $spacing-700;
+        height: $spacing-700;
+        border: 1px solid;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $color-white;
+    }
+}
+
+main {
+    padding: $spacing-400 $spacing-400 $spacing-800;
+    display: grid;
+    justify-items: center;
+    gap: $spacing-800; 
+
+    .img-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: $spacing-200;
+
+        img {
+            border-radius: .5rem;
+        }
+    }
+
+    .meet {
+        display: grid;
+        gap: $spacing-400;
+
+        &-title {
+            text-transform: uppercase;
+            color: $color-cyan-600;
+            font-size: .75rem;
+            letter-spacing: $spacing-50;
+        }
+
+        &-heading {
+            color: $color-slate-900;
+            font-size: $spacing-400;
+        }
+
+        &-info {
+            color: $color-slate-600;
+            line-height: 1.5;
+            font-size: $spacing-200;
+            font-weight: 500;
+        }
+    }
+}
+
+.footer {
+    display: grid;
+    justify-items: center;
+    color: $color-white;
+
+    &-point {
+        position: relative;
+    }
+
+    &-title {
+        font-size: $spacing-400;
+    }
+
+    &-text {
+        font-size: $spacing-200;
+        line-height: 1.5;
+        font-weight: 500;
+    }
+
+    &-info {
+        width: 100%;
+        display: grid;
+        justify-items: center;
+        gap: $spacing-300;
+        padding: $spacing-800 $spacing-400;
+        background: linear-gradient(rgba(77, 150, 168, 0.9), rgba(77, 150, 168, 0.9)), url("../assets/mobile/image-footer.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+}
+
+@media screen and (551px <= width <= 1199px) {
+    .header {
+        &-infowrapper {
+            padding: 23.4375rem 7.25rem 0 7.25rem;   
+        }
+
+        &-info {
+            padding: $spacing-800 $spacing-400;
+        }
+
+        &-title {
+            font-size: 3rem;
+        }
+
+        .buttons {
+            flex-direction: row;
+            justify-content: center;
+        }
+    }
+
+    main {
+        padding: $spacing-700 $spacing-400 $spacing-800;
+
+        .img-container {
+            grid-template-columns: repeat(4, 1fr);
+            gap: $spacing-300;
+        }
+
+        .meet {
+            margin-inline: 5.5rem;
+            &-title {
+                font-size: 0.875rem;
+            }
+    
+            &-heading {
+                font-size: 2.25rem;
+            }
+        }
+    }
+
+    .footer {
+    
+        &-title {
+            font-size: 2.25rem;
+        }
+    
+        &-info {
+            padding: $spacing-1000;
+            background: linear-gradient(rgba(77, 150, 168, 0.9), rgba(77, 150, 168, 0.9)), url("../assets/tablet/image-footer.jpg");
+        }
+    }
+}
+
+@media screen and (width >= 1200px) {
+    .header {
+        background-image: url("../assets/desktop/image-hero-left.png"), url("../assets/desktop/image-hero-right.png");
+        background-position: left, right;
+        background-size: auto;
+
+        &-nav {
+            padding-top: $spacing-1000;
+        }
+
+        &-infowrapper {
+            padding: 1.5rem 21rem;  
+        }
+
+        &-info {
+            padding: $spacing-800 $spacing-1000;
+        }
+
+        &-title {
+            font-size: 4rem;
+        }
+
+        &-desc {
+            font-size: 1.125rem;
+        }
+
+        .buttons {
+            flex-direction: row;
+            justify-content: center;
+        }
+    }
+
+    main {
+        padding: $spacing-700 $spacing-1000 $spacing-900;
+
+        .img-container {
+            grid-template-columns: repeat(4, 1fr);
+            gap: $spacing-400;
+        }
+
+        .meet {
+            margin-inline: 18rem;
+            &-title {
+                font-size: $spacing-200;
+            }
+    
+            &-heading {
+                font-size: $spacing-500;
+            }
+    
+            &-info {
+                font-size: 1.125rem;
+            }
+        }
+    }
+
+    .footer {
+        text-align: left;
+
+        &-title {
+            font-size: $spacing-500;
+        }
+        
+        &-text {
+            font-size: 1.125rem;
+        }
+
+        &-info {
+            padding: $spacing-1400 $spacing-1000;
+            grid-template-columns: repeat(3, 1fr);
+            gap: $spacing-800;
+            background: linear-gradient(rgba(77, 150, 168, 0.9), rgba(77, 150, 168, 0.9)), url("../assets/desktop/image-footer.jpg");
+        }
+    }
+}

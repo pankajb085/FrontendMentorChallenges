@@ -1,0 +1,167 @@
+* {
+  box-sizing: border-box;
+}
+
+h1, h2, p, body {
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  font-family: "Manrope", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 13px;
+  line-height: 1.5;
+  font-weight: 500;
+  letter-spacing: 0.12px;
+  color: #6E8098;
+  background-color: #ECF2F8;
+  padding: 4.5rem 1.5rem;
+}
+
+.wrapper {
+  height: 100%;
+}
+
+.container {
+  display: grid;
+  border-radius: 0.5rem;
+  background-color: #FFF;
+  max-width: 730px;
+}
+
+header img {
+  border-radius: 0.5rem 0.5rem 0 0;
+  aspect-ratio: 1.635/1;
+  object-fit: cover;
+}
+
+main {
+  padding: 2rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.title {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  color: #48556A;
+}
+
+footer {
+  padding: 1rem 2rem;
+}
+footer .share {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+footer .share .user-name {
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  color: #48556A;
+  font-size: 13px;
+}
+footer .share-avatar {
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+footer .share-img {
+  position: relative;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 2rem;
+  height: 2rem;
+  background-color: #ECF2F8;
+  object-fit: scale-down;
+  object-position: center;
+  margin-left: auto;
+}
+footer .share-img > img {
+  position: relative;
+  left: 25%;
+  top: 25%;
+}
+footer .share-img .tooltip {
+  display: none;
+  position: absolute;
+  padding: 1rem 2rem;
+  background-color: #48556A;
+  width: max-content;
+  border-radius: 0.5rem;
+  top: -230%;
+  left: -330%;
+}
+footer .share-img .tooltip .share-text {
+  text-transform: uppercase;
+  color: #9DAEC2;
+  letter-spacing: 5px;
+}
+footer .share-img .tooltip::after {
+  content: " ";
+  position: absolute;
+  bottom: -38%;
+  left: 48%;
+  border-width: 10px;
+  border-style: solid;
+  border-color: #48556A transparent transparent;
+}
+footer .share-img .tooltip.active {
+  display: flex;
+}
+footer .active .share-text {
+  text-transform: uppercase;
+  color: #9DAEC2;
+  letter-spacing: 5px;
+}
+footer .active img:not(.share-img) {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+footer .active .share-img {
+  background-color: #6E8098;
+}
+footer .none {
+  display: none;
+}
+
+.footer-active {
+  background-color: #48556A;
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+
+@media screen and (width >= 768px) {
+  .container {
+    grid-template-areas: "header main" "header footer";
+  }
+  header {
+    grid-area: header;
+  }
+  header img {
+    border-radius: 0.5rem 0 0 0.5rem;
+    aspect-ratio: 1/1;
+  }
+  main {
+    grid-area: main;
+    padding-bottom: 0;
+    gap: 0.5rem;
+  }
+  footer {
+    grid-area: footer;
+  }
+  .title {
+    font-size: 1.25rem;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
